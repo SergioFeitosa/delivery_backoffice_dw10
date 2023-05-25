@@ -132,9 +132,9 @@ mixin _$PaymentTypeController on PaymentTypeControllerBase, Store {
       {int? id,
       required String name,
       required String acronym,
-      required bool enabled}) {
+      required bool enabled,}) {
     return _$savePaymentAsyncAction.run(() => super
-        .savePayment(id: id, name: name, acronym: acronym, enabled: enabled));
+        .savePayment(id: id, name: name, acronym: acronym, enabled: enabled,),);
   }
 
   late final _$PaymentTypeControllerBaseActionController =
