@@ -71,9 +71,6 @@ class _ProductDetailPageState extends State<ProductDetailPage>
             hideLoader();
             break;
           case ProductDetailStateStatus.deleted:
-            hideLoader();
-            Navigator.pop(context);
-            break;
           case ProductDetailStateStatus.saved:
             hideLoader();
             Navigator.pop(context);
