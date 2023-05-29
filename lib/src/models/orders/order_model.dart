@@ -43,7 +43,9 @@ class OrderModel {
       id: (map['id'] ?? 0) as int,
       date: DateTime.parse(map['date']),
       status: OrderStatus.parse(map['status']),
-      orderProducts: List<OrderProductModel>.from((map['products'] as List<int>).map<OrderProductModel>((x) => OrderProductModel.fromMap(x as Map<String,dynamic>),),),
+      orderProducts: List<OrderProductModel>.from(
+        map['products'].map<OrderProductModel>(
+          (x) => OrderProductModel.fromMap(x as Map<String,dynamic>),),),
       userId: (map['user_id'] ?? 0) as int,
       address: (map['address'] ?? '') as String,
       cpf: (map['cpf'] ?? '') as String,
