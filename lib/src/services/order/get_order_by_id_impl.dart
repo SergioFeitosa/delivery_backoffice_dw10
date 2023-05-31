@@ -24,13 +24,19 @@ class GetOrderByIdImpl implements GetOrderById {
   Future<OrderDto> call(OrderModel order) => _orderDtoParse(order);
 
   Future<OrderDto> _orderDtoParse(OrderModel order) async {
+
+    final start = DateTime.now();
+
     final paymentTypeFuture =
         _paymentTypeRepository.getById(order.paymentTypeId);
     final userFuture = _userRepository.getById(order.userId);
     final orderProductsFuture = _orderProductParse(order);
 
+
     final responses =
         await Future.wait([paymentTypeFuture, userFuture, orderProductsFuture]);
+
+    print('Calculando tempo: ${DateTime.now().difference(start).inMilliseconds}');
 
     return OrderDto(
       id: order.id,
@@ -45,12 +51,17 @@ class GetOrderByIdImpl implements GetOrderById {
   }
 
   Future<List<OrderProductDto>> _orderProductParse(OrderModel order) async {
+    
+
     final orderProducts = <OrderProductDto>[];
     final productsFuture = order.orderProducts
         .map((e) => _productRepository.getProduct(e.productId))
         .toList();
 
+
     final products = await Future.wait(productsFuture);
+
+
 
     for (var i = 0; i < order.orderProducts.length; i++) {
       final orderProduct = order.orderProducts[i];
@@ -62,6 +73,7 @@ class GetOrderByIdImpl implements GetOrderById {
       );
       orderProducts.add(productDto);
     }
+
     return orderProducts;
   }
 }

@@ -14,6 +14,7 @@ class PaymentTypeRepositoryImpl implements PaymentTypeRepository {
 
   @override
   Future<List<PaymentTypeModel>> findAll(bool? enabled) async {
+
     try {
       final paymentResult = await _dio.auth().get(
         '/payment-types',
@@ -21,6 +22,7 @@ class PaymentTypeRepositoryImpl implements PaymentTypeRepository {
           if (enabled != null) 'enabled': enabled,
         },
       );
+
       return paymentResult.data
           .map<PaymentTypeModel>((p) => PaymentTypeModel.fromMap(p))
           .toList();

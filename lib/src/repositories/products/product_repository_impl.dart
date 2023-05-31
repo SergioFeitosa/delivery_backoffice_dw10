@@ -51,6 +51,7 @@ class ProductRepositoryImpl implements ProductRepository {
       final productResult = await _dio.auth().get(
             '/products/$id',
           );
+
       return ProductModel.fromMap(productResult.data);
     } on DioError catch (e, s) {
       log('Erro ao buscar produto $id', error: e, stackTrace: s);

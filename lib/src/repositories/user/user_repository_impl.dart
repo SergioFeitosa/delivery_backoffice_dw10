@@ -15,9 +15,10 @@ class UserRepositoryImpl implements UserRepository {
 
   @override
   Future<UserModel> getById(int id) async {
+
     try {
   final userResponse = await _dio.get('/users/$id');
-  
+
   return UserModel.fromMap(userResponse.data);
 } on DioError catch (e, s) {
   log('Erro ao buscar o usuário', error: e, stackTrace: s);

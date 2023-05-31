@@ -32,4 +32,13 @@ enum Menu {
     this.label,
     );
 
+  static Menu? findByPath(String path) {
+    final menu = Menu.values.where((element) => path.contains(element.route));
+
+    if(menu.isNotEmpty) {
+      return menu.first;
+    }
+    return null;
+  }
+
 }
