@@ -81,7 +81,7 @@ class _BaseLayoutState extends State<BaseLayout> {
                         const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text('Agro Negócio'),
+                            Text('Agro Negócio em andamento'),
                             SizedBox(
                               width: 20,
                             ),
