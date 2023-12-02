@@ -44,7 +44,7 @@ class OrderRepositoryImpl implements OrderRepository {
         '/orders',
         queryParameters: {
           'date': date.toIso8601String(),
-          if (status != null) 'status': status.acronym
+          if (status != null) 'status': status.acronym,
 
         },
       );

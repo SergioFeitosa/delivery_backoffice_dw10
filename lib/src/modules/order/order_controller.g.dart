@@ -129,7 +129,7 @@ mixin _$OrderController on OrderControllerBase, Store {
   @override
   void changeStatusFilter(OrderStatus? status) {
     final _$actionInfo = _$OrderControllerBaseActionController.startAction(
-        name: 'OrderControllerBase.changeStatusFilter');
+        name: 'OrderControllerBase.changeStatusFilter',);
     try {
       return super.changeStatusFilter(status);
     } finally {

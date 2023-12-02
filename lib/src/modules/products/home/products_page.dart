@@ -104,7 +104,7 @@ class _ProductsPageState extends State<ProductsPage> with Loader, Messages {
                 );
               },
             ),
-          )
+          ),
         ],
       ),
     );

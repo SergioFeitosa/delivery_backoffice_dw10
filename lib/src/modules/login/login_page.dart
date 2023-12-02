@@ -74,7 +74,7 @@ class _LoginPageState extends State<LoginPage> with Loader, Messages {
     final screenShortestSide = context.screenShortestSide;
     final screenWidth = context.screenWidth;
     return Scaffold(
-      backgroundColor: context.colors.black,
+      backgroundColor: context.colors.primary,
       body: Form(
         key: formKey,
         child: Stack(
@@ -87,7 +87,7 @@ class _LoginPageState extends State<LoginPage> with Loader, Messages {
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(
-                      'assets/images/lanche.png',
+                      'assets/images/soja.png',
                     ),
                     fit: BoxFit.cover,
                   ),
@@ -97,7 +97,7 @@ class _LoginPageState extends State<LoginPage> with Loader, Messages {
             Container(
               width: screenShortestSide * .5,
               padding: EdgeInsets.only(top: context.percentHeight(.10)),
-              child: Image.asset('assets/images/logo.png'),
+              child: Image.asset('assets/images/agrokelvy2.png'),
             ),
             Align(
               alignment: Alignment.center,
@@ -117,7 +117,7 @@ class _LoginPageState extends State<LoginPage> with Loader, Messages {
                       children: [
                         FractionallySizedBox(
                           widthFactor: .3,
-                          child: Image.asset('assets/images/logo.png'),
+                          child: Image.asset('assets/images/agrokelvy2.png'),
                         ),
                         const SizedBox(
                           height: 20,
@@ -160,7 +160,7 @@ class _LoginPageState extends State<LoginPage> with Loader, Messages {
                           height: 50,
                           child: ElevatedButton(
                             onPressed: _formSubmit,
-                            child: const Text('Entrar'),
+                            child: const Text('Entrar',style: TextStyle(color: Colors.white),),
                           ),
                         ),
                       ],

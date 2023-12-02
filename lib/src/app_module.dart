@@ -31,8 +31,8 @@ class AppModule extends Module {
             ModuleRoute(
               '/order',
               module: OrderModule(),
-            )
+            ),
           ],
-        )
+        ),
       ];
 }

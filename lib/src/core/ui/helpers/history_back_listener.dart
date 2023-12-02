@@ -15,7 +15,7 @@ mixin HistoryBackListener<T extends StatefulWidget> on State<T> {
       (event) async {
         await Future.delayed(const Duration(milliseconds: 200), () {
           if (mounted) {
-            onHistoryBack(event);
+            onHistoryBack(Object as Event);
           }
         });
       },

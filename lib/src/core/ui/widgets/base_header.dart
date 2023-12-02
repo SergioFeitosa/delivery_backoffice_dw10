@@ -78,7 +78,7 @@ class BaseHeader extends StatelessWidget {
                   label:Text(buttonLabel),
                 ),
               ),
-            )
+            ),
           ],
         );
       },

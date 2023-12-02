@@ -69,7 +69,7 @@ class ProductItem extends StatelessWidget {
                     child: const Text('Editar'),
                   ),
                 ],
-              )
+              ),
             ],
           );
         },

@@ -107,7 +107,7 @@ class OrderBottomBarButton extends StatelessWidget {
                 buttonLabel,
                 style:
                     context.textStyles.textBold.copyWith(color: Colors.white),
-              )
+              ),
             ],
           ),
         ),

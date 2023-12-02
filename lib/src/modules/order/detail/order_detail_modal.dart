@@ -60,7 +60,7 @@ class _OrderDetailModalState extends State<OrderDetailModal> {
                         onPressed: _closeModal,
                         icon: const Icon(Icons.close),
                       ),
-                    )
+                    ),
                   ],
                 ),
                 const SizedBox(

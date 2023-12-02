@@ -27,7 +27,7 @@ class _OrderHeaderState extends State<OrderHeader> {
         value: statusSelected,
         items: [
           const DropdownMenuItem(value: null, child: Text('Todos')),
-          ...OrderStatus.values.map((s) => DropdownMenuItem(value: s, child: Text(s.name))).toList()
+          ...OrderStatus.values.map((s) => DropdownMenuItem(value: s, child: Text(s.name))).toList(),
         ],
         onChanged: (value) {
           setState(() {

@@ -83,7 +83,7 @@ mixin _$ProductDetailController on ProductDetailControllerBase, Store {
 
   late final _$uploadImageProductAsyncAction = AsyncAction(
       'ProductDetailControllerBase.uploadImageProduct',
-      context: context);
+      context: context,);
 
   @override
   Future<void> uploadImageProduct(Uint8List file, String filename) {

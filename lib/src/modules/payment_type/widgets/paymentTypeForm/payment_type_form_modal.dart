@@ -73,7 +73,7 @@ class _PaymentTypeFormModalState extends State<PaymentTypeFormModal> {
                       onTap: _closeModal,
                       child: const Icon(Icons.close),
                     ),
-                  )
+                  ),
                 ],
               ),
               const SizedBox(
@@ -112,7 +112,7 @@ class _PaymentTypeFormModalState extends State<PaymentTypeFormModal> {
                         enabled = value;
                       });
                     }),
-                  )
+                  ),
                 ],
               ),
               const Divider(),
@@ -159,7 +159,7 @@ class _PaymentTypeFormModalState extends State<PaymentTypeFormModal> {
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),

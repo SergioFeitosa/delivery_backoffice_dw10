@@ -153,7 +153,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
                             },
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                   Expanded(
@@ -187,7 +187,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
                               const InputDecoration(label: Text('Preço')),
                           inputFormatters: [
                             FilteringTextInputFormatter.digitsOnly,
-                            CentavosInputFormatter(moeda: true)
+                            CentavosInputFormatter(moeda: true),
                           ],
                         ),
                       ],
@@ -313,7 +313,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
                     ],
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),

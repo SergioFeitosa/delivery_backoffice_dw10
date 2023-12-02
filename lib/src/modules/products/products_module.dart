@@ -13,7 +13,7 @@ class ProductsModule extends Module {
     ),
         Bind.lazySingleton(
       (i) => ProductDetailController(i()),
-    )
+    ),
 
     ];
 

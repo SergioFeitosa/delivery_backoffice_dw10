@@ -100,6 +100,5 @@ abstract class ProductDetailControllerBase with Store {
       _status = ProductDetailStateStatus.error;
       _errorMessage = 'Erro ao deletar produto';
     }
-
   }
 }

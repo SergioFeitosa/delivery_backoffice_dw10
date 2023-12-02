@@ -32,6 +32,6 @@ class CoreModule extends Module {
         Bind.lazySingleton<UserRepository>(
           (i) => UserRepositoryImpl(i()),
           export: true,
-        )
+        ),
       ];
 }
