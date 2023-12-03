@@ -13,20 +13,20 @@ import '../../../core/ui/helpers/messages.dart';
 import '../../../core/ui/helpers/size_extensions.dart';
 import '../../../core/ui/helpers/upload_html_helper.dart';
 import '../../../core/ui/styles/text_styles.dart';
-import 'product_detail_controller.dart';
+import 'company_detail_controller.dart';
 
-class ProductDetailPage extends StatefulWidget {
-  final int? productId;
+class CompanyDetailPage extends StatefulWidget {
+  final int? companyId;
 
-  const ProductDetailPage({Key? key, this.productId}) : super(key: key);
+  const CompanyDetailPage({Key? key, this.companyId}) : super(key: key);
 
   @override
-  State<ProductDetailPage> createState() => _ProductDetailPageState();
+  State<CompanyDetailPage> createState() => _CompanyDetailPageState();
 }
 
-class _ProductDetailPageState extends State<ProductDetailPage>
+class _CompanyDetailPageState extends State<CompanyDetailPage>
     with Loader, Messages {
-  final controller = Modular.get<ProductDetailController>();
+  final controller = Modular.get<CompanyDetailController>();
   final formKey = GlobalKey<FormState>();
   final nameEC = TextEditingController();
   final priceEC = TextEditingController();
@@ -46,38 +46,38 @@ class _ProductDetailPageState extends State<ProductDetailPage>
     WidgetsBinding.instance.addPostFrameCallback((_) {
       reaction((_) => controller.status, (status) {
         switch (status) {
-          case ProductDetailStateStatus.initial:
+          case CompanyDetailStateStatus.initial:
             break;
-          case ProductDetailStateStatus.loading:
+          case CompanyDetailStateStatus.loading:
             showLoader();
             break;
-          case ProductDetailStateStatus.loaded:
-            final model = controller.productModel!;
+          case CompanyDetailStateStatus.loaded:
+            final model = controller.companyModel!;
             nameEC.text = model.name;
             priceEC.text = model.price.currencyPTBR;
             descriptionEC.text = model.description;
             hideLoader();
             break;
-          case ProductDetailStateStatus.error:
+          case CompanyDetailStateStatus.error:
             hideLoader();
             showError(controller.errorMessage!);
             break;
-          case ProductDetailStateStatus.errorLoadProduct:
+          case CompanyDetailStateStatus.errorLoadCompany:
             hideLoader();
-            showError('Erro ao carregar o produto para alteração');
+            showError('Erro ao carregar a empresa para alteração');
             Navigator.of(context).pop();
             break;
-          case ProductDetailStateStatus.uploaded:
+          case CompanyDetailStateStatus.uploaded:
             hideLoader();
             break;
-          case ProductDetailStateStatus.deleted:
-          case ProductDetailStateStatus.saved:
+          case CompanyDetailStateStatus.deleted:
+          case CompanyDetailStateStatus.saved:
             hideLoader();
             Navigator.pop(context);
             break;
         }
       });
-      controller.loadProduct(widget.productId);
+      controller.loadCompany(widget.companyId);
     });
   }
 
@@ -96,7 +96,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
                 children: [
                   Expanded(
                     child: Text(
-                      '${widget.productId != null ? 'Alterar' : 'Adicionar'} Produto',
+                      '${widget.companyId != null ? 'Alterar' : 'Adicionar'} Empresa',
                       textAlign: TextAlign.center,
                       style: context.textStyles.textTitle.copyWith(
                         decoration: TextDecoration.underline,
@@ -139,7 +139,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
                         child: TextButton(
                           onPressed: () {
                             UploadHtmlHelper().startUpload(
-                              controller.uploadImageProduct,
+                              controller.uploadImageCompany,
                             );
                           },
                           style: TextButton.styleFrom(
@@ -230,7 +230,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
                         width: widgetButtonAction / 2,
                         height: 60,
                         child: Visibility(
-                          visible: widget.productId != null,
+                          visible: widget.companyId != null,
                           child: OutlinedButton(
                             style: OutlinedButton.styleFrom(
                               side: const BorderSide(color: Colors.red),
@@ -242,7 +242,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
                                   return AlertDialog(
                                     title: const Text('Confirmar'),
                                     content: Text(
-                                      'Confirma a exclusão do produto ${controller.productModel!.name}',
+                                      'Confirma a exclusão do produto ${controller.companyModel!.name}',
                                     ),
                                     actions: [
                                       TextButton(
@@ -260,7 +260,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
                                       TextButton(
                                         onPressed: () {
                                           Navigator.pop(context);
-                                          controller.deleteProduct();
+                                          controller.deleteCompany();
                                         },
                                         child: Text(
                                           'Confirmar',

@@ -1,4 +1,33 @@
 enum Menu {
+
+  agronegocios(
+    '/agronegocios/',
+    'agronomy_ico.png',
+    'agronomy_ico_selected.png',
+    'Administrar Agronegócios',
+  ),
+
+  minerals(
+    '/minerals/',
+    'agronomy_ico.png',
+    'agronomy_ico_selected.png',
+    'Administrar Minerais',
+  ),
+
+  stones(
+    '/stones/',
+    'agronomy_ico.png',
+    'agronomy_ico_selected.png',
+    'Administrar Pedras',
+  ),
+
+  companys(
+    '/companys/',
+    'agronomy_ico.png',
+    'agronomy_ico_selected.png',
+    'Administrar Empresa',
+  ),
+
   paymentType(
     '/payment-type/',
     'payment_type_ico.png',

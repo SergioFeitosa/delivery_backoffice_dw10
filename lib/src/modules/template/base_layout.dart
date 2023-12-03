@@ -15,9 +15,9 @@ class BaseLayout extends StatefulWidget {
 }
 
 class _BaseLayoutState extends State<BaseLayout> {
-      String _lang = '';
+  String _lang = '';
 
-@override
+  @override
   void initState() {
     _lang = 'Commodities Internacionais';
     super.initState();
@@ -78,27 +78,80 @@ class _BaseLayoutState extends State<BaseLayout> {
                         const SizedBox(
                           height: 30,
                         ),
-                        const Row(
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text('Agro Negócio em andamento'),
-                            SizedBox(
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    Modular.to.navigate('/agronegocios');
+                                  });
+                                },
+                                child: const Text('Agronegócio'),
+                              ),
+                            ),
+                            const SizedBox(
                               width: 20,
                             ),
-                            Text('Minerais'),
-                            SizedBox(
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    Modular.to.navigate('/minerals');
+                                  });
+                                },
+                                child: const Text('Minerais'),
+                              ),
+                            ),
+
+                            const SizedBox(
                               width: 20,
                             ),
-                            Text('Pedras'),
-                            SizedBox(
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    Modular.to.navigate('/stones');
+                                  });
+                                },
+                                child: const Text('Pedras'),
+                              ),
+                            ),
+                            const SizedBox(
                               width: 20,
                             ),
-                            Text('Empresas'),
-                            SizedBox(
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    Modular.to.navigate('/companys');
+                                  });
+                                },
+                                child: const Text('Empresas'),
+                              ),
+                            ),
+
+                            const SizedBox(
                               width: 20,
                             ),
-                            Text('Quem somos'),
-                            SizedBox(
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    Modular.to.navigate('/quemsomos');
+                                  });
+                                },
+                                child: const Text('Quem somos'),
+                              ),
+                            ),
+
+                            const SizedBox(
                               width: 20,
                             ),
                           ],

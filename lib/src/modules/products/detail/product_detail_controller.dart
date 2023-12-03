@@ -42,7 +42,7 @@ abstract class ProductDetailControllerBase with Store {
   Future<void> uploadImageProduct(Uint8List file, String filename) async {
     _status = ProductDetailStateStatus.loading;
     _imagePath = await _productRepository.uploadImageProduct(file, filename);
-    _status = ProductDetailStateStatus.loaded;
+    _status = ProductDetailStateStatus.uploaded;
   }
 
   @action
