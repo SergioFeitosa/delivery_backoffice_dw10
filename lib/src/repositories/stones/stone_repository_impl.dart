@@ -20,6 +20,7 @@ class StoneRepositoryImpl implements StoneRepository {
         '/stones/$id',
         data: {'enabled': false},
       );
+    // ignore: deprecated_member_use
     } on DioError catch (e, s) {
       log('Erro ao deletar pedra', error: e, stackTrace: s);
       throw RepositoryException('Erro ao deletar pedra');

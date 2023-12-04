@@ -20,6 +20,7 @@ class CompanyRepositoryImpl implements CompanyRepository {
         '/companys/$id',
         data: {'enabled': false},
       );
+    // ignore: deprecated_member_use
     } on DioError catch (e, s) {
       log('Erro ao deletar empresa', error: e, stackTrace: s);
       throw RepositoryException('Erro ao deletar empresa');

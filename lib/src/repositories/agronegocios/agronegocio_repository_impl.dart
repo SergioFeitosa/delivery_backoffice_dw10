@@ -20,6 +20,7 @@ class AgronegocioRepositoryImpl implements AgronegocioRepository {
         '/agronegocios/$id',
         data: {'enabled': false},
       );
+    // ignore: deprecated_member_use
     } on DioError catch (e, s) {
       log('Erro ao deletar produto', error: e, stackTrace: s);
       throw RepositoryException('Erro ao deletar produto');

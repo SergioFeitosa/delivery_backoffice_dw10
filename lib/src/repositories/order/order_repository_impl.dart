@@ -22,6 +22,7 @@ class OrderRepositoryImpl implements OrderRepository {
           'status': status.acronym,
         },
       );
+    // ignore: deprecated_member_use
     } on DioError catch (e, s) {
       log(
         'Erro ao alterar status do pedido para ${status.acronym}',

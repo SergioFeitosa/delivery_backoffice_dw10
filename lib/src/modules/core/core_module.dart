@@ -19,43 +19,19 @@ import '../../repositories/user/user_repository.dart';
 import '../../repositories/user/user_repository_impl.dart';
 
 class CoreModule extends Module {
+
   @override
-  List<Bind> get binds => [
-        Bind.lazySingleton<SessionStorage>(
-          (i) => SessionStorageImpl(),
-          export: true,
-        ),
-        Bind.lazySingleton(
-          (i) => CustomDio(i()),
-          export: true,
-        ),
-        Bind.lazySingleton<AgronegocioRepository>(
-          (i) => AgronegocioRepositoryImpl(i()),
-          export: true,
-        ),
-        Bind.lazySingleton<MineralRepository>(
-          (i) => MineralRepositoryImpl(i()),
-          export: true,
-        ),
-        Bind.lazySingleton<StoneRepository>(
-          (i) => StoneRepositoryImpl(i()),
-          export: true,
-        ),
-        Bind.lazySingleton<CompanyRepository>(
-          (i) => CompanyRepositoryImpl(i()),
-          export: true,
-        ),
-        Bind.lazySingleton<PaymentTypeRepository>(
-          (i) => PaymentTypeRepositoryImpl(i()),
-          export: true,
-        ),
-        Bind.lazySingleton<ProductRepository>(
-          (i) => ProductRepositoryImpl(i()),
-          export: true,
-        ),
-        Bind.lazySingleton<UserRepository>(
-          (i) => UserRepositoryImpl(i()),
-          export: true,
-        ),
-      ];
+  void binds(i) {
+    i.addLazySingleton<SessionStorage>(SessionStorageImpl.new);
+    i.addLazySingleton<AgronegocioRepository>(AgronegocioRepositoryImpl.new);
+    i.addLazySingleton<MineralRepository>(MineralRepositoryImpl.new);
+    i.addLazySingleton<StoneRepository>(StoneRepositoryImpl.new);
+    i.addLazySingleton<CompanyRepository>(CompanyRepositoryImpl.new);
+    i.addLazySingleton<PaymentTypeRepository>(PaymentTypeRepositoryImpl.new);
+    i.addLazySingleton<ProductRepository>(ProductRepositoryImpl.new);
+    i.addLazySingleton<UserRepository>(UserRepositoryImpl.new);
+    i.addLazySingleton<CustomDio>(CustomDio.new);
+
+  }
 }
+

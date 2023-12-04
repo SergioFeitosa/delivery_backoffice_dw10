@@ -52,6 +52,19 @@ class _AgronegociosPageState extends State<AgronegociosPage> with Loader, Messag
             controller.loadAgronegocios();
 
             break;
+          case AgronegocioStateStatus.presentationAgronegocio:
+            hideLoader();
+            final agronegocioSelected = controller.agronegocioSelected;
+            var uri = '/agronegocios/presentation';
+
+            if (agronegocioSelected != null) {
+              uri += '?id=${agronegocioSelected.id}';  
+            }
+
+            await Modular.to.pushNamed(uri);
+            controller.loadAgronegocios();
+
+            break;
         }
       });
       controller.loadAgronegocios();
@@ -74,9 +87,9 @@ class _AgronegociosPageState extends State<AgronegociosPage> with Loader, Messag
         children: [
           BaseHeader(
             title: 'ADMINISTRAR AGRONEGÓCIO',
-            buttonLabel: 'ADICIONAR AGRONEGÓCIO',
+            buttonLabel: 'apresentar AGRONEGÓCIO',
             buttonPressed: () {
-              controller.addAgronegocio();
+              controller.showPresentationAgronegocio();
               },
             searchChange: (value) {
               debouncer.call(() {

@@ -20,6 +20,7 @@ class UserRepositoryImpl implements UserRepository {
   final userResponse = await _dio.get('/users/$id');
 
   return UserModel.fromMap(userResponse.data);
+// ignore: deprecated_member_use
 } on DioError catch (e, s) {
   log('Erro ao buscar o usuário', error: e, stackTrace: s);
   throw RepositoryException('Erro ao buscar o usuário');

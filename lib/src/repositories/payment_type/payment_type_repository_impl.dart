@@ -26,6 +26,7 @@ class PaymentTypeRepositoryImpl implements PaymentTypeRepository {
       return paymentResult.data
           .map<PaymentTypeModel>((p) => PaymentTypeModel.fromMap(p))
           .toList();
+    // ignore: deprecated_member_use
     } on DioError catch (e, s) {
       log('Erro ao buscar formas de pagamento', error: e, stackTrace: s);
       throw RepositoryException('Erro ao buscar formas de pagamento');

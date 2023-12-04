@@ -1,5 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../../core/rest_client/custom_dio.dart';
+import '../../core/storage/session_storage.dart';
+import '../../core/storage/session_storage_impl.dart';
 import '../../repositories/auth/auth_repository.dart';
 import '../../repositories/auth/auth_repository_impl.dart';
 import '../../services/auth/login_service.dart';
@@ -8,20 +11,19 @@ import 'login_controller.dart';
 import 'login_page.dart';
 
 class LoginModule extends Module {
-  @override
-  List<Bind> get binds => [
-        Bind.lazySingleton<AuthRepository>(
-          (i) => AuthRepositoryImpl(i()),
-        ),
-        Bind.lazySingleton<LoginService>(
-          (i) => LoginServiceImpl(i(), i()),
-        ),
-        Bind.lazySingleton<LoginController>(
-          (i) => LoginController(i()),
-        ),
-      ];
 
   @override
-  List<ModularRoute> get routes =>
-      [ChildRoute('/', child: (context, args) => const LoginPage())];
+  void binds(i) {
+    i.addLazySingleton<AuthRepository>(AuthRepositoryImpl.new);
+    i.addLazySingleton<LoginService>(LoginServiceImpl.new);
+    i.addLazySingleton<LoginController>(LoginController.new);
+    i.addLazySingleton<CustomDio>(CustomDio.new);
+    i.addLazySingleton<SessionStorage>(SessionStorageImpl.new);
+
+  }
+
+  @override
+  void routes(r) {
+    r.child('/', child: (context) => const LoginPage());
+  }
 }

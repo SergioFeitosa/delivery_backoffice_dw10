@@ -25,6 +25,7 @@ class AuthRepositoryImpl implements AuthRepository {
     },
   );
   return AuthModel.fromMap(result.data);
+// ignore: deprecated_member_use
 } on DioError catch (e, s) {
   if(e.response?.statusCode == 403) {
     log('Login ou senha inválidos', error: e, stackTrace: s);

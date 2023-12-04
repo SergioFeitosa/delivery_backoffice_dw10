@@ -13,6 +13,7 @@ enum AgronegocioStateStatus {
   loaded,
   error,
   addOrUpdateAgronegocio,
+  presentationAgronegocio,
 }
 
 class AgronegociosController = AgronegociosControllerBase with _$AgronegociosController;
@@ -67,4 +68,13 @@ abstract class AgronegociosControllerBase with Store {
     _agronegocioSelected = agronegocioModel;
     _status = AgronegocioStateStatus.addOrUpdateAgronegocio;
   }
+
+  @action
+  Future<void> showPresentationAgronegocio() async {
+    _status = AgronegocioStateStatus.loading;
+    await Future.delayed(Duration.zero);
+    _agronegocioSelected = null;
+    _status = AgronegocioStateStatus.presentationAgronegocio;
+  }
+
 }
