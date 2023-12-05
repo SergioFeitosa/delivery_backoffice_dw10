@@ -11,7 +11,7 @@ import 'widget/order_header.dart';
 import 'widget/order_item.dart';
 
 class OrderPage extends StatefulWidget {
-  const OrderPage({Key? key}) : super(key: key);
+  const OrderPage({super.key});
 
   @override
   State<OrderPage> createState() => _OrderPageState();

@@ -11,7 +11,7 @@ import 'stones_controller.dart';
 import 'widgets/stone_item.dart';
 
 class StonesPage extends StatefulWidget {
-  const StonesPage({Key? key}) : super(key: key);
+  const StonesPage({super.key});
 
   @override
   State<StonesPage> createState() => _StonesPageState();

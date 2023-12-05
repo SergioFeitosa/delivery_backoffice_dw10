@@ -9,7 +9,7 @@ import 'menu_button.dart';
 import 'menu_enum.dart';
 
 class MenuBar extends StatefulWidget {
-  const MenuBar({Key? key}) : super(key: key);
+  const MenuBar({super.key});
 
   @override
   State<MenuBar> createState() => _MenuBarState();

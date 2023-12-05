@@ -8,7 +8,7 @@ class OrderHeader extends StatefulWidget {
   
   final OrderController controller;
 
-  const OrderHeader({Key? key, required this.controller}) : super(key: key);
+  const OrderHeader({super.key, required this.controller});
 
   @override
   State<OrderHeader> createState() => _OrderHeaderState();
@@ -27,7 +27,7 @@ class _OrderHeaderState extends State<OrderHeader> {
         value: statusSelected,
         items: [
           const DropdownMenuItem(value: null, child: Text('Todos')),
-          ...OrderStatus.values.map((s) => DropdownMenuItem(value: s, child: Text(s.name))).toList(),
+          ...OrderStatus.values.map((s) => DropdownMenuItem(value: s, child: Text(s.name))),
         ],
         onChanged: (value) {
           setState(() {

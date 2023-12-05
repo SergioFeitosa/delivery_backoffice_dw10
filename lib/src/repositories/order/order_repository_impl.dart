@@ -52,6 +52,7 @@ class OrderRepositoryImpl implements OrderRepository {
       return orderResponse.data
           .map<OrderModel>((o) => OrderModel.fromMap(o))
           .toList();
+    // ignore: deprecated_member_use
     } on DioError catch (e, s) {
       log(
         'Erro ao buscar Pedidos',
@@ -71,6 +72,7 @@ class OrderRepositoryImpl implements OrderRepository {
             '/orders/$id',
           );
       return OrderModel.fromMap(orderResponse.data);
+    // ignore: deprecated_member_use
     } on DioError catch (e, s) {
       log(
         'Erro ao buscar Pedido $id',

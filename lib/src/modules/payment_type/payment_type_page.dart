@@ -11,7 +11,7 @@ import 'widgets/payment_type_header.dart';
 import 'widgets/payment_type_item.dart';
 
 class PaymentTypePage extends StatefulWidget {
-  const PaymentTypePage({Key? key}) : super(key: key);
+  const PaymentTypePage({super.key});
 
   @override
   State<PaymentTypePage> createState() => _PaymentTypePageState();

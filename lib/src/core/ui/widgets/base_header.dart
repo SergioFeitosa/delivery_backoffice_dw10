@@ -11,14 +11,14 @@ class BaseHeader extends StatelessWidget {
   final Widget? filterWidget;
 
   const BaseHeader({
-    Key? key,
+    super.key,
     required this.title,
     this.searchChange,
     this.buttonLabel = '',
     this.buttonPressed,
     this.addButton = true,
     this.filterWidget,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

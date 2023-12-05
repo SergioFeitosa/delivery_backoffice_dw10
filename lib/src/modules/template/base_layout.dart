@@ -8,7 +8,7 @@ import 'menu/menu_bar.dart' as menu;
 class BaseLayout extends StatefulWidget {
   final Widget body;
 
-  const BaseLayout({Key? key, required this.body}) : super(key: key);
+  const BaseLayout({super.key, required this.body});
 
   @override
   State<BaseLayout> createState() => _BaseLayoutState();

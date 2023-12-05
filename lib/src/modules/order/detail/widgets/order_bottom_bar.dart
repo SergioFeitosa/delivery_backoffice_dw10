@@ -10,8 +10,7 @@ class OrderBottomBar extends StatelessWidget {
   final OrderDto order;
 
   const OrderBottomBar(
-      {Key? key, required this.controller, required this.order,})
-      : super(key: key);
+      {super.key, required this.controller, required this.order,});
 
   @override
   Widget build(BuildContext context) {
@@ -71,13 +70,13 @@ class OrderBottomBarButton extends StatelessWidget {
   final VoidCallback? onPressed;
 
   const OrderBottomBarButton({
-    Key? key,
+    super.key,
     required this.borderRadius,
     required this.buttonColor,
     required this.image,
     required this.buttonLabel,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

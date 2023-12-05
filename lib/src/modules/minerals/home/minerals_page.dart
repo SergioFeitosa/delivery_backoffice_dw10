@@ -11,7 +11,7 @@ import 'minerals_controller.dart';
 import 'widgets/mineral_item.dart';
 
 class MineralsPage extends StatefulWidget {
-  const MineralsPage({Key? key}) : super(key: key);
+  const MineralsPage({super.key});
 
   @override
   State<MineralsPage> createState() => _MineralsPageState();

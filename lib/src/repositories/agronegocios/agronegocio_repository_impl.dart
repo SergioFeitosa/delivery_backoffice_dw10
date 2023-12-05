@@ -40,6 +40,7 @@ class AgronegocioRepositoryImpl implements AgronegocioRepository {
       return agronegocioResult.data
           .map<AgronegocioModel>((p) => AgronegocioModel.fromMap(p))
           .toList();
+    // ignore: deprecated_member_use
     } on DioError catch (e, s) {
       log('Erro ao buscar produtos', error: e, stackTrace: s);
       throw RepositoryException('Erro ao buscar produtos');
@@ -54,6 +55,7 @@ class AgronegocioRepositoryImpl implements AgronegocioRepository {
           );
 
       return AgronegocioModel.fromMap(agronegocioResult.data);
+    // ignore: deprecated_member_use
     } on DioError catch (e, s) {
       log('Erro ao buscar produto $id', error: e, stackTrace: s);
       throw RepositoryException('Erro ao buscar produto $id');
@@ -71,6 +73,7 @@ class AgronegocioRepositoryImpl implements AgronegocioRepository {
       } else {
         await client.post('/agronegocios/}', data: data);
       }
+    // ignore: deprecated_member_use
     } on DioError catch (e, s) {
       log('Erro ao salvar produto', error: e, stackTrace: s);
       throw RepositoryException('Erro ao salvar produto');
@@ -87,6 +90,7 @@ class AgronegocioRepositoryImpl implements AgronegocioRepository {
       );
       final response = await _dio.auth().post('/uploads', data: formData);
       return response.data['url'];
+    // ignore: deprecated_member_use
     } on DioError catch (e, s) {
       log('Erro ao fazer upload do arquivo', error: e, stackTrace: s);
       throw RepositoryException('Erro ao fazer upload do arquivo');

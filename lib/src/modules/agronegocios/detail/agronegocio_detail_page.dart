@@ -18,7 +18,7 @@ import 'agronegocio_detail_controller.dart';
 class AgronegocioDetailPage extends StatefulWidget {
   final int? agronegocioId;
 
-  const AgronegocioDetailPage({Key? key, this.agronegocioId}) : super(key: key);
+  const AgronegocioDetailPage({super.key, this.agronegocioId});
 
   @override
   State<AgronegocioDetailPage> createState() => _AgronegocioDetailPageState();

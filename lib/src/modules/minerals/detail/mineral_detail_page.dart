@@ -18,7 +18,7 @@ import 'mineral_detail_controller.dart';
 class MineralDetailPage extends StatefulWidget {
   final int? mineralId;
 
-  const MineralDetailPage({Key? key, this.mineralId}) : super(key: key);
+  const MineralDetailPage({super.key, this.mineralId});
 
   @override
   State<MineralDetailPage> createState() => _MineralDetailPageState();

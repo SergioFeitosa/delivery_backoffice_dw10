@@ -11,7 +11,7 @@ import 'companys_controller.dart';
 import 'widgets/company_item.dart';
 
 class CompanysPage extends StatefulWidget {
-  const CompanysPage({Key? key}) : super(key: key);
+  const CompanysPage({super.key});
 
   @override
   State<CompanysPage> createState() => _CompanysPageState();

@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use, duplicate_ignore
+
 import 'dart:developer';
 
 import 'package:dio/dio.dart';

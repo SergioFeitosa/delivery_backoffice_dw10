@@ -18,7 +18,7 @@ import 'company_detail_controller.dart';
 class CompanyDetailPage extends StatefulWidget {
   final int? companyId;
 
-  const CompanyDetailPage({Key? key, this.companyId}) : super(key: key);
+  const CompanyDetailPage({super.key, this.companyId});
 
   @override
   State<CompanyDetailPage> createState() => _CompanyDetailPageState();

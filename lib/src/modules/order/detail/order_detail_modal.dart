@@ -16,10 +16,10 @@ class OrderDetailModal extends StatefulWidget {
 
 
   const OrderDetailModal({
-    Key? key,
+    super.key,
     required this.controller,
     required this.order,
-  }) : super(key: key);
+  });
 
   @override
   State<OrderDetailModal> createState() => _OrderDetailModalState();
@@ -84,7 +84,7 @@ class _OrderDetailModalState extends State<OrderDetailModal> {
                 const Divider(),
                 ...widget.order.orderproducts
                     .map((op) => OrderProductItem(orderProduct: op))
-                    .toList(),
+                    ,
                     const SizedBox(
                        height: 10,
                     ),

@@ -8,7 +8,7 @@ class OrderProductItem extends StatelessWidget {
 
   final OrderProductDto orderProduct;
 
-  const OrderProductItem({ Key? key, required this.orderProduct }) : super(key: key);
+  const OrderProductItem({ super.key, required this.orderProduct });
 
    @override
    Widget build(BuildContext context) {

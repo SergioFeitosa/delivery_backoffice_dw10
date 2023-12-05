@@ -18,7 +18,7 @@ import 'product_detail_controller.dart';
 class ProductDetailPage extends StatefulWidget {
   final int? productId;
 
-  const ProductDetailPage({Key? key, this.productId}) : super(key: key);
+  const ProductDetailPage({super.key, this.productId});
 
   @override
   State<ProductDetailPage> createState() => _ProductDetailPageState();

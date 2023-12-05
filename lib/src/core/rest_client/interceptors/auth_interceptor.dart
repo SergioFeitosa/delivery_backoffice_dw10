@@ -17,6 +17,7 @@ class AuthInterceptor extends Interceptor {
   }
 
   @override
+  // ignore: deprecated_member_use
   void onError(DioError err, ErrorInterceptorHandler handler) {
     if (err.response?.statusCode == 401) {
       GlobalContext.instance.loginExpire();

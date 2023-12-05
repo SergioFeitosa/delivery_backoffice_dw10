@@ -6,8 +6,7 @@ class OrderInfoTile extends StatelessWidget {
   final String label;
   final String info;
 
-  const OrderInfoTile({Key? key, required this.label, required this.info})
-      : super(key: key);
+  const OrderInfoTile({super.key, required this.label, required this.info});
 
   @override
   Widget build(BuildContext context) {

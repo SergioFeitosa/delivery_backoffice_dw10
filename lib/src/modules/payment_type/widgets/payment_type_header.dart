@@ -6,8 +6,7 @@ import '../payment_type_controller.dart';
 class PaymentTypeHeader extends StatefulWidget {
   final PaymentTypeController controller;
 
-  const PaymentTypeHeader({Key? key, required this.controller})
-      : super(key: key);
+  const PaymentTypeHeader({super.key, required this.controller});
 
   @override
   State<PaymentTypeHeader> createState() => _PaymentTypeHeaderState();

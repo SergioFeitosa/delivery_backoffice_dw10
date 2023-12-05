@@ -10,8 +10,7 @@ class PaymentTypeItem extends StatelessWidget {
   final PaymentTypeController controller;
 
   const PaymentTypeItem(
-      {Key? key, required this.payment, required this.controller,})
-      : super(key: key);
+      {super.key, required this.payment, required this.controller,});
 
   @override
   Widget build(BuildContext context) {

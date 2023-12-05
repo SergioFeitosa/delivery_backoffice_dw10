@@ -9,11 +9,11 @@ class MenuButton extends StatelessWidget {
   final ValueChanged<Menu> onPressed;
 
   const MenuButton({
-    Key? key,
+    super.key,
     required this.menu,
     this.menuSelected,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

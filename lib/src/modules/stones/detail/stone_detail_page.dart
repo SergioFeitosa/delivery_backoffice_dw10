@@ -18,7 +18,7 @@ import 'stone_detail_controller.dart';
 class StoneDetailPage extends StatefulWidget {
   final int? stoneId;
 
-  const StoneDetailPage({Key? key, this.stoneId}) : super(key: key);
+  const StoneDetailPage({super.key, this.stoneId});
 
   @override
   State<StoneDetailPage> createState() => _StoneDetailPageState();
