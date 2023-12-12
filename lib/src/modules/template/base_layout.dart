@@ -86,7 +86,7 @@ class _BaseLayoutState extends State<BaseLayout> {
                               child: GestureDetector(
                                 onTap: () {
                                   setState(() {
-                                    Modular.to.navigate('/agronegocios');
+                                    Modular.to.navigate('/agronegocios/presentation');
                                   });
                                 },
                                 child: const Text('Agronegócio'),

@@ -5,12 +5,12 @@ import '../../core/storage/session_storage.dart';
 import '../../core/storage/session_storage_impl.dart';
 import '../../repositories/agronegocios/agronegocio_repository.dart';
 import '../../repositories/agronegocios/agronegocio_repository_impl.dart';
-import 'detail copy/agronegocio_presentation_controller.dart';
-import 'detail copy/agronegocio_presentation_page.dart';
 import 'detail/agronegocio_detail_controller.dart';
 import 'detail/agronegocio_detail_page.dart';
 import 'home/agronegocios_controller.dart';
 import 'home/agronegocios_page.dart';
+import 'presentation/agronegocio_presentation_controller.dart';
+import 'presentation/agronegocio_presentation_page.dart';
 
 class AgronegociosModule extends Module {
   @override
